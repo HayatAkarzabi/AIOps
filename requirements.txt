@@ -1,0 +1,22 @@
+# API
+fastapi==0.111.0
+uvicorn==0.30.0
+pydantic==2.7.0
+
+# ML & Time Series
+scikit-learn==1.4.2
+pandas==2.2.2
+numpy==1.26.4
+statsmodels==0.14.2
+prophet==1.1.5
+
+# Deep Learning
+torch==2.3.0
+
+# InfluxDB
+influxdb-client==1.43.0
+
+# Visualization & Utils
+plotly==5.22.0
+python-dotenv==1.0.1
+requests==2.32.2
