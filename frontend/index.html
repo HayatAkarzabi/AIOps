@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIOps Platform - Smart Operational Intelligence</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h1>AIOps</h1>
+                <p>Smart Operations</p>
+            </div>
+            <ul class="nav-links">
+                <li class="active" data-section="dashboard">
+                    <span class="nav-icon">&#9679;</span> Dashboard
+                </li>
+                <li data-section="metrics">
+                    <span class="nav-icon">&#9632;</span> Metrics
+                </li>
+                <li data-section="logs">
+                    <span class="nav-icon">&#9776;</span> Logs
+                </li>
+                <li data-section="anomalies">
+                    <span class="nav-icon">&#9888;</span> Anomalies
+                </li>
+                <li data-section="forecasts">
+                    <span class="nav-icon">&#8599;</span> Forecasts
+                </li>
+                <li data-section="alerts">
+                    <span class="nav-icon">&#128276;</span> Alerts
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Header Bar -->
+            <header class="topbar">
+                <h2 id="section-title">Dashboard</h2>
+                <div class="topbar-right">
+                    <span class="health-indicator" id="health-status">Checking...</span>
+                    <button id="refresh-btn" onclick="refreshAll()">Refresh</button>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section id="section-dashboard" class="content-section active">
+                <div class="stats-grid">
+                    <div class="stat-card" onclick="switchSection('metrics')">
+                        <h3>Total Metrics</h3>
+                        <p class="stat-value" id="stat-metrics">0</p>
+                    </div>
+                    <div class="stat-card" onclick="switchSection('logs')">
+                        <h3>Recent Logs</h3>
+                        <p class="stat-value" id="stat-logs">0</p>
+                    </div>
+                    <div class="stat-card" onclick="switchSection('anomalies')">
+                        <h3>Anomalies Detected</h3>
+                        <p class="stat-value" id="stat-anomalies">0</p>
+                    </div>
+                    <div class="stat-card" onclick="switchSection('alerts')">
+                        <h3>Active Alerts</h3>
+                        <p class="stat-value" id="stat-alerts">0</p>
+                    </div>
+                </div>
+                <div class="chart-placeholder">
+                    <h3>System Health Overview</h3>
+                    <p id="health-message">Loading health data...</p>
+                </div>
+            </section>
+
+            <!-- Metrics Section -->
+            <section id="section-metrics" class="content-section">
+                <h3>System Metrics</h3>
+                <div id="metrics-content" class="data-content">
+                    <p>Loading metrics...</p>
+                </div>
+            </section>
+
+            <!-- Logs Section -->
+            <section id="section-logs" class="content-section">
+                <h3>Recent Logs</h3>
+                <div id="logs-content" class="data-content">
+                    <p>Loading logs...</p>
+                </div>
+            </section>
+
+            <!-- Anomalies Section -->
+            <section id="section-anomalies" class="content-section">
+                <h3>Detected Anomalies</h3>
+                <div id="anomalies-content" class="data-content">
+                    <p>Loading anomalies...</p>
+                </div>
+            </section>
+
+            <!-- Forecasts Section -->
+            <section id="section-forecasts" class="content-section">
+                <h3>Forecasts</h3>
+                <div id="forecasts-content" class="data-content">
+                    <p>Loading forecasts...</p>
+                </div>
+            </section>
+
+            <!-- Alerts Section -->
+            <section id="section-alerts" class="content-section">
+                <h3>Active Alerts</h3>
+                <div id="alerts-content" class="data-content">
+                    <p>Loading alerts...</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
